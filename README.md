@@ -3,7 +3,7 @@ Printf project is one of the projects in the ALX program which encompasses every
 
 This particular project contains functions that are written to produce output according to a format and it considers how different conversion specifiers are handled.
  
-![alt text](Path:/storage/emulated/0/Download/printed.png)
+![printf](https://github.com/s-channah/printf/assets/111011092/90dc7c0d-f946-4032-b3ba-70b2bcba584b)
 
 
 AUTHORIZED FUNCTIONS AND MACROS

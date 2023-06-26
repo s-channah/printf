@@ -57,6 +57,29 @@ int _printf(const char *format, ...)
 				counter++;
 			}
 
+			else if (*format == 'u')
+			{
+				unsigned int x = va_arg(args, unsigned int);
+
+				_putchar(x + '0');
+				counter++;
+			}
+
+			else if (*format == 'x' || *format == 'X')
+			{
+				_putchar(*format);
+				counter++;
+			}
+
+			else if (*format == 'o')
+			{
+				unsigned int y = va_arg(args, unsigned int);
+
+				_putchar(y + '0');
+				counter++;
+			}
+
+
 			else
 			{
 				_putchar('%');

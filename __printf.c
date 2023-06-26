@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 
 			else if (*format == 'i' || *format == 'd')
 			{
-				int x = va_args(args, int);
+				int x = va_arg(args, int);
 
 				_putchar(x + '0');
 				counter++;

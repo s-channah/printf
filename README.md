@@ -1,10 +1,9 @@
 	PRINTF GROUP PROJECT
-
 Printf project is one of the projects in the ALX program which encompasses everything we have been thought in the program.
 
 This particular project contains functions that are written to produce output according to a format and it considers how different conversion specifiers are handled.
  
-
+![alt text](Path:/storage/emulated/0/Download/printed.png)
 
 
 AUTHORIZED FUNCTIONS AND MACROS
@@ -18,7 +17,6 @@ va_copy (man 3 va_copy)
 va_arg (man 3 va_arg)
 
 COMPILATIONS
-
 -Your code will be compiled this way:
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 

@@ -1,18 +1,14 @@
-0x11. C - printf
-C
-Group project
-Done by
- Elijah Omeruah
+	PRINTF GROUP PROJECT
 
+Printf project is one of the projects in the ALX program which encompasses everything we have been thought in the program.
 
- Hannah Sado
-
+This particular project contains functions that are written to produce output according to a format and it considers how different conversion specifiers are handled.
+ 
 
 
 
+AUTHORIZED FUNCTIONS AND MACROS
 
-More Info
-Authorized functions and macros
 write (man 2 write)
 malloc (man 3 malloc)
 free (man 3 free)
@@ -21,8 +17,14 @@ va_end (man 3 va_end)
 va_copy (man 3 va_copy)
 va_arg (man 3 va_arg)
 
+COMPILATIONS
 
-		Collabrators
-Elijah Omeruah
+-Your code will be compiled this way:
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
-Hannah Sado
+
+		COLLABORATORS
+
+ELIJAH OMERUAH
+
+HANNAH SADO

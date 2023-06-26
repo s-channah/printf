@@ -3,21 +3,12 @@ C
 Group project
 Done by
  Elijah Omeruah
+
+
  Hannah Sado
 
 
-0x11. C - printf
-C
-Group project
 
-Group Projects
-Pair Programming - How To
-Flowcharts
-Technical Writing
-Background Context
-Write your own printf function.
-
-printf (3)
 
 
 More Info
@@ -33,4 +24,5 @@ va_arg (man 3 va_arg)
 
 		Collabrators
 Elijah Omeruah
+
 Hannah Sado

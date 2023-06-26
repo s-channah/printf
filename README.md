@@ -1,5 +1,5 @@
 	PRINTF GROUP PROJECT
-Printf project is one of the projects in the ALX program which encompasses everything we have been thought in the program.
+Printf project is one of the projects in the ALX program which encompasses everything we have been taught in the program.
 
 This particular project contains functions that are written to produce output according to a format and it considers how different conversion specifiers are handled.
  
@@ -21,8 +21,6 @@ COMPILATIONS
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 
-		COLLABORATORS
-
-ELIJAH OMERUAH
-
+	COLLABORATORS
 HANNAH SADO
+ELIJAH OMERUAH

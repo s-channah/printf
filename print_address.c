@@ -16,8 +16,10 @@ int print_address(void *ptr)
 	printed_count += 2;
 
 	if (address == 0)
+	{
 		_putchar('0');
 		printed_count++;
+	}
 
 	else
 		printed_count += print_unsigned_int(address, 16);

@@ -9,10 +9,10 @@
 
 int print_unsigned_caps(unsigned int n, int base)
 {
-	int printed_count;
-	char *possible_digits = "0123456789ABCDEF"
+	int printed_count = 0;
+	char *possible_digits = "0123456789ABCDEF";
 
-	base = (unsigned int) base;
+	base = (unsigned int)base;
 
 	if (n / base)
 		printed_count += print_unsigned_int((n / base), base);

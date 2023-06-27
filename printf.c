@@ -36,38 +36,47 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					char *str = va_arg(args, char *);
+
 					printed_count += print_str(str);
 					break;
 				case 'd':
 					int n = va_arg(args, int);
+
 					printed_count += print_integer(n);
 					break;
 				case 'b':
 					int n = va_arg(args, unsigned int);
-					printed_count += print_unsigned(n, 2);
+
+					printed_count += print_unsigned_int(n, 2);
 					break;
 				case 'u':
 					int n = va_arg(args, unsigned int);
-					printed_count += print_unsigned(n, 10);
+
+					printed_count += print_unsigned_int(n, 10);
 					break;
 				case 'X':
 					int n = va_arg(args, unsigned int);
+
 					printed_count += print_unsigned_caps(n, 16);
 					break;
 				case 'i':
 					int n = va_arg(args, int);
+
 					printed_count += print_integer(n);
 					break;
 				case 'o':
 					int n = va_arg(args, unsigned int);
-					printed_count += print_unsigned(n, 8);
+
+					printed_count += print_unsigned_int(n, 8);
 					break;
 				case 'x':
 					int n = va_arg(args, unsigned int);
-					printed_count += print_unsigned(n, 16);
+
+					printed_count += print_unsigned_int(n, 16);
 					break;
 				case 'p':
 					void *n = va_arg(args, unsigned int);
+
 					printed_count += print_address(n);
 					break;
 				default:

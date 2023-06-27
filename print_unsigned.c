@@ -7,7 +7,7 @@
  * Return: number of char printed after conversion
  */
 
-int print_unsigned(unsigned int n, int base)
+int print_unsigned_int(unsigned int n, int base)
 {
 	int printed_count;
 	char *possible_digits = "0123456789abcdef"

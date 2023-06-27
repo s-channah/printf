@@ -1,47 +1,27 @@
 #include "main.h"
 
 /**
- * binar - change int to binary
- * @list: int to change
- * Return: string with binary
+ * print_binary - print binary numbers
+ * @n: positive integers
+ * Return: 1
  */
 
-char *binar(va_list list)
+int print_binary(unsigned int n)
 {
-	unsigned int j = 0, b = 1;
-	unsigned int i, k;
-	char *s;
+	unsigned int i = 1;
 
-	k = va_arg(list, int);
-	i = k;
-
-	/* malloc up to max int in binary */
-	s = malloc(sizeof(char) * 33);
-	if (s == NULL)
-		return (NULL);
-	/* account for negative numbers with '1' at index 0 */
-	if (k < 0)
+	while (i <= n / 2)
+		i *= 2;
+	while (i > 0)
 	{
-		s[0] = 1 + '0';
-		j++;
-		k *= -1;
-		i *= -1;
+		if (n >= i)
+		{
+			_putchar('1');
+			n -= i;
+		}
+		else
+			_putchar('0');
+		i /= 2;
 	}
-	/* find biggest power of 2 it's divisible by */
-	while (k > 1)
-	{
-		k /= 2;
-		b *= 2;
-	}
-
-	/* divide down and store binary num */
-	while (b > 0)
-	{
-		s[j++] = (i / b + '0');
-		i %= b;
-		b /= 2;
-	}
-	s[j] = '\0';
-
-	return (s);
+	return (1);
 }

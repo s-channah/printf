@@ -1,71 +1,40 @@
 #include "main.h"
 
 /**
- * _intst - makes an int a string
- * @div: multiple of 10
- * @length: length of number
- * @n: number to convert to string
- * Return: string
- **/
-char *_intst(int div, int length, int n)
+ * print_integer - prints integers
+ * @n: integer
+ * Return: length
+ */
+int print_integer(int n)
 {
-	char *str;
-	int i = 0;
+	 int num = n;
+	int len = 1;
 
-	str = malloc(sizeof(char) * length + 2);
-	if (str == NULL)
-		return (NULL);
-
-	if (n < 0) /* account for negative sign */
+	if (n < 0)
 	{
-		str[0] = '-';
-		i++;
+		num = -n;
+		_putchar('-');
+		len++;
 	}
-	while (n < 0) /* convert each num to string */
+	while (num / 10 > 0)
 	{
-		str[i] = ((n / div) * -1 + '0'); /* *-1 to handle min int */
-		n = n % div;
-		div /= 10;
-		i++;
+		num /= 10;
+		len++;
 	}
-	while (div >= 1) /* same, this case for positives */
+	num = n;
+	while (len > 0)
 	{
-		str[i] = ((n / div) + '0');
-		n = n % div;
-		div /= 10;
-		i++;
+		if (num < 0)
+		{
+			_putchar(-(num / len) + '0');
+			num %= len;
+		}
+		else
+		{
+			_putchar(num / len + '0');
+			num %= len;
+		}
+		len /= 10;
 	}
-	str[i] = '\0';
-	return (str);
-}
-
-/**
- * print_d - gets length to put in _itos
- * @list: takes arg
- * Return: integer string
- **/
-char *print_d(va_list list)
-{
-	int length, div, n, temp;
-
-	n = va_arg(list, int);
-	temp = n;
-	length = 0;
-	div = 1;
-
-	if (n == 0) /* account for 0 having length 1 */
-	{
-		length++;
-		return (_intst(div, length, n));
-	}
-
-	while (temp != 0) /* find multiple of ten to divide */
-	{
-		length += 1;
-		if (length > 1)
-			div *= 10;
-		temp /= 10;
-	}
-
-	return (_intst(div, length, n));
+	return (len);
 }

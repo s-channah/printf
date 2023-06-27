@@ -8,8 +8,8 @@
 
 char *binar(va_list list)
 {
-	int j = 0, twos = 1;
-	int i, k;
+	unsigned int j = 0, b = 1;
+	unsigned int i, k;
 	char *s;
 
 	k = va_arg(list, int);
@@ -19,29 +19,19 @@ char *binar(va_list list)
 	s = malloc(sizeof(char) * 33);
 	if (s == NULL)
 		return (NULL);
-
-	/* account for negative numbers with '1' at index 0 */
-	if (k < 0)
-	{
-		s[0] = 1 + '0';
-		j++;
-		k *= -1;
-		i *= -1;
-	}
-
 	/* find biggest power of 2 it's divisible by */
 	while (k > 1)
 	{
 		k /= 2;
-		twos *= 2;
+		b *= 2;
 	}
 
 	/* divide down and store binary num */
-	while (twos > 0)
+	while (b > 0)
 	{
-		s[j++] = (i / twos + '0');
-		i %= twos;
-		twos /= 2;
+		s[j++] = (i / b + '0');
+		i %= b;
+		b /= 2;
 	}
 	s[j] = '\0';
 

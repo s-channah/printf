@@ -15,16 +15,15 @@ int _printf(const char *format, ...)
 	int printed_count = 0;
 
 	va_start(args, format);
-	const char *f = *format;
 
-	if (f == NULL)
+	if (format == NULL)
 		return (-1);
-	while (*f && f)
+	while (*format && format)
 	{
-		if (*f == '%')
+		if (*format == '%')
 		{
-			f++;
-			switch (*f)
+			format++;
+			switch (*format)
 			{
 				case 'c':
 					_putchar(va_arg(args, int));
@@ -81,7 +80,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					_putchar('%');
-					_putchar(*f);
+					_putchar(*format);
 					printed_count += 2;
 					break;
 			}
@@ -91,7 +90,7 @@ int _printf(const char *format, ...)
 			_putchar(*f);
 			printed_count++;
 		}
-		f++;
+		format++;
 	}
 	va_end(args);
 	return (printed_count);

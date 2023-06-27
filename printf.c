@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	const char *f = *format;
 
-	if (format == NULL)
+	if (f == NULL)
 		return (-1);
 	while (*f && f)
 	{

@@ -19,6 +19,14 @@ char *binar(va_list list)
 	s = malloc(sizeof(char) * 33);
 	if (s == NULL)
 		return (NULL);
+	/* account for negative numbers with '1' at index 0 */
+	if (k < 0)
+	{
+		s[0] = 1 + '0';
+		j++;
+		k *= -1;
+		i *= -1;
+	}
 	/* find biggest power of 2 it's divisible by */
 	while (k > 1)
 	{

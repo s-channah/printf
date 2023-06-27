@@ -3,66 +3,88 @@
 int _printf(const char *format, ...);
 
 /**
- * _printf - provided output to stdout based on format invoked
- * @format: a string format with commands
+ * _printf - prints string to stdout based on args invoked
+ * @format: string formats & commnands producing formatted output
  * @...: variable number of arguments that can be called
- * Return: total character count printed on stdout except NULL
+ * Return: total character counts printed to stdout except NULL
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter = 0;
+	int printed_count = 0;
 
 	va_start(args, format);
+	const char *f = *format;
 
-	while (*format && format)
+	if (format == NULL)
+		return (-1);
+	while (*f && f)
 	{
-		if (*format != '%')
+		if (*f == '%')
 		{
-			_putchar(*format);
-			counter++;
+			f++;
+			switch (*f)
+			{
+				case 'd':
+					int n = va_arg(args, int);
+					printed_count += print_integer(n);
+					break;
+				case 'b':
+					int n = va_arg(args, unsigned int);
+					printed_count += print_unsigned(n, 2);
+					break;
+				case 'u':
+					int n = va_arg(args, unsigned int);
+					printed_count += print_unsigned(n, 10);
+					break;
+				case 'X':
+					int n = va_arg(args, unsigned int);
+					printed_count += print_unsigned_caps(n, 16);
+					break;
+				case 'c':
+					_putchar(va_arg(args, int));
+					printed_count++;
+					break;
+				case '%':
+					_putchar('%');
+					printed_count++;
+					break;
+				case 's':
+					char *str = va_arg(args, char *);
+					printed_count += print_str(str);
+					break;
+				case 'i':
+					int n = va_arg(args, int);
+					printed_count += print_integer(n);
+					break;
+				case 'o':
+					int n = va_arg(args, unsigned int);
+					printed_count += print_unsigned(n, 8);
+					break;
+				case 'x':
+					int n = va_arg(args, unsigned int);
+					printed_count += print_unsigned(n, 16);
+					break;
+				case 'p':
+					void *n = va_arg(args, unsigned int);
+					printed_count += print_address(n);
+					break;
+				default:
+					_putchar('%');
+					_putchar(*f);
+					printed_count += 2;
+					break;
+			}
 		}
-
 		else
 		{
-			format++;
-			if (*format == '%')
-			{
-				_putchar(*format);
-				counter++;
-			}
-
-			else if (*format == 'c')
-			{
-				char c = va_arg(args, int);
-
-				_putchar(c);
-				counter++;
-			}
-
-			else if (*format == 's')
-			{
-				char *str = va_arg(args, char *);
-
-				counter += _puts(str);
-
-			}
-
-
-			else
-			{
-				_putchar('%');
-				counter++;
-
-				_putchar(*format);
-				counter++;
-			}
+			_putchar(*f);
+			printed_count++;
 		}
-
-		format++;
+		f++;
 	}
-
 	va_end(args);
-	return (counter);
+	return (printed_count);
 }
+

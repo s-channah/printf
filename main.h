@@ -15,4 +15,12 @@ char *binar(va_list list);
 char *_intst(int div, int length, int n);
 char *print_d(va_list list);
 
+
+int print_str(va_list args);
+int print_unsigned_caps(unsigned int n, int base);
+int print_integer(int num);
+int print_unsigned(unsigned int n, int base);
+int print_address(void *ptr);
+
+
 #endif /* Hannah Sado and Elijah Omeruah*/

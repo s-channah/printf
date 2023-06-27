@@ -8,14 +8,16 @@
 
 
 int print_str(va_list args)
-{i
+{
 	int printed_count = 0;
-	char *str = va_arg(args, char *);
+	char *str;
+
+	str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
-	if (*s)
-		printed_count += _puts(*str);
+
+	printed_count += _puts(str);
 
 	return (printed_count);
 }

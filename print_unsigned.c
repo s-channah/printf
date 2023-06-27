@@ -9,7 +9,7 @@
 
 int print_unsigned_int(unsigned int n, int base)
 {
-	int printed_count;
+	int printed_count = 0;
 	char *possible_digits = "0123456789abcdef";
 
 	base = (unsigned int) base;

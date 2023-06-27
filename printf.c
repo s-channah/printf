@@ -26,6 +26,18 @@ int _printf(const char *format, ...)
 			f++;
 			switch (*f)
 			{
+				case 'c':
+					_putchar(va_arg(args, int));
+					printed_count++;
+					break;
+				case '%':
+					_putchar('%');
+					printed_count++;
+					break;
+				case 's':
+					char *str = va_arg(args, char *);
+					printed_count += print_str(str);
+					break;
 				case 'd':
 					int n = va_arg(args, int);
 					printed_count += print_integer(n);
@@ -41,18 +53,6 @@ int _printf(const char *format, ...)
 				case 'X':
 					int n = va_arg(args, unsigned int);
 					printed_count += print_unsigned_caps(n, 16);
-					break;
-				case 'c':
-					_putchar(va_arg(args, int));
-					printed_count++;
-					break;
-				case '%':
-					_putchar('%');
-					printed_count++;
-					break;
-				case 's':
-					char *str = va_arg(args, char *);
-					printed_count += print_str(str);
 					break;
 				case 'i':
 					int n = va_arg(args, int);

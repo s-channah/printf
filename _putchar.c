@@ -3,10 +3,10 @@
 /**
  * _putchar - returns and write a char (one byte) to stdout
  * @c: character to be printed/written on stdout
- * Return: the character invoked, else -1 
+ * Return: 1 (no of character printed), else -1 on failure
  */
 
 int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }

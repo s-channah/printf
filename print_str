@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * print_str - this prints string invoked in it
+ * @args: va_list type variable containing arguments
+ * Return: no of string characters printed except NULL
+ */
+
+
+int print_str(va_list args)
+{i
+	int printed_count = 0;
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+		str = "(null)";
+	if (*s)
+		printed_count += _puts(*str);
+
+	return (printed_count);
+}

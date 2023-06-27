@@ -1,17 +1,21 @@
 #include "main.h"
 
 /**
- * _puts - works to ptint strings to stdout 
- * @str: this is the string to be written/printed
- * Return: string invoked into the function
+ * _puts - works to ptint strings to stdout
+ * @str: pointer to strings to be written/printed
+ * Return: numbers of char printed by puts function
  */
 
 int _puts(char *str)
 {
-	char c;
-	int index = 0;
+	int printed_count = 0;
 
-	while ((c = str[index++]))
-		_putchar(c);
-	return(index - 1);
+	while (*str++)
+	{
+		_putchar(str);
+		printed_count++
+	}
+
+	return (printed_count);
+
 }

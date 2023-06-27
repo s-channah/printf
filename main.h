@@ -10,6 +10,6 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
-
+char *binar(va_list list);
 
 #endif /* Hannah Sado and Elijah Omeruah*/

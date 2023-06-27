@@ -2,7 +2,7 @@
 
 /**
  * print_address - prints hex address stored in *ptr
- * @ptr: pointer variable whose content we are to print 
+ * @ptr: pointer variable whose content we are to print
  * Return: number of characters printed this function
  */
 
@@ -19,8 +19,8 @@ int print_address(void *ptr)
 		_putchar('0');
 		printed_count++;
 
-	else 
-		printed_count += print_unsigned(address, 16);
+	else
+		printed_count += print_unsigned_int(address, 16);
 
 	return (printed_count);
 }

@@ -18,11 +18,11 @@ int print_integer(int num)
 		n = -(num);
 	}
 
-	else 
+	else
 		n = num;
 
 	if (n / 10)
-		printed_count += print_integer(n/10);
+		printed_count += print_integer(n / 10);
 
 	_putchar((n % 10) + '0');
 	printed_count++;

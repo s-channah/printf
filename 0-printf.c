@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-<<<<<<< HEAD:0-printf.c
+
 			if (*format == '%')
 			{
 				_putchar(*format);
@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
-				counter += print_integer(va_arg(args, int));
+				counter += printf("%d", va_arg(args, int));
 				break;
 			}
 			else if (*format == 'b')
@@ -57,9 +57,9 @@ int _printf(const char *format, ...)
 				break;
 			}
 			else
-=======
+
 			switch (*format)
->>>>>>> a51ab22b4c54eaa835053e3eb6f22eee34ae315e:printf.c
+
 			{
 				case 'c':
 					_putchar(va_arg(args, int));

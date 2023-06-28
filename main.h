@@ -21,6 +21,6 @@ int print_unsigned_caps(unsigned int n, int base);
 int print_integer(int num);
 int print_unsigned_int(unsigned int n, int base);
 int print_address(void *ptr);
-
+int print_reverse(char *str);
 
 #endif /* Hannah Sado and Elijah Omeruah*/

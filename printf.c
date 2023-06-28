@@ -15,17 +15,7 @@ int _printf(const char *format, ...)
 	int printed_count = 0;
 	int n, n1, n2, n3, n4, n5, n6;
 	char *str;
-
-
-	union Converter
-	{
-		unsigned int ui;
-		void *ptr;
-	};
-	union Converter converter;
-
 	void *ptr;
-
 
 	va_start(args, format);
 
@@ -95,6 +85,11 @@ int _printf(const char *format, ...)
 					ptr = va_arg(args, void *);
 					printed_count += print_address(ptr);
 					break;
+				case 'r':
+					str = va_arg(args, char *);
+					printed_count += print_reverse(str);
+					break;
+
 				default:
 					_putchar('%');
 					_putchar(*format);

@@ -14,19 +14,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int printed_count = 0;
 	int n, n1, n2, n3, n4, n5, n6;
-	void *n7;
 	char *str;
-	union Converter
-	{
-		unsigned int ui;
-		void *ptr;
-	};
-	union Converter converter;
-	/**
-	 * union Converter - union that converts types of variables
-	 * @ui: unsigned in variable
-	 * @ptr: void pointer of union converter
-	 */
+	void *ptr;
 
 	va_start(args, format);
 
@@ -91,10 +80,8 @@ int _printf(const char *format, ...)
 					printed_count += print_unsigned_int(n6, 16);
 					break;
 				case 'p':
-					converter.ui = va_arg(args, unsigned int);
-					n7 = converter.ptr;
-
-					printed_count += print_address(n7);
+					ptr = va_arg(args, void *);
+					printed_count += print_address(ptr);
 					break;
 				default:
 					_putchar('%');

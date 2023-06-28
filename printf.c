@@ -16,17 +16,17 @@ int _printf(const char *format, ...)
 	int n, n1, n2, n3, n4, n5, n6;
 	void *n7;
 	char *str;
-/**
- * union Converter - This is a union that converts types
- * @ui: this is an unsigned int variable
- * @ptr: a void pointer variable declared
- */
 	union Converter
 	{
 		unsigned int ui;
 		void *ptr;
 	};
 	union Converter converter;
+	/**
+	 * union Converter - union that converts types of variables
+	 * @ui: unsigned in variable
+	 * @ptr: void pointer of union converter
+	 */
 
 	va_start(args, format);
 
@@ -46,7 +46,6 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%');
 					printed_count++;
-					format++;
 					break;
 				case 's':
 					str = va_arg(args, char *);

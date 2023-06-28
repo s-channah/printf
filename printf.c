@@ -44,18 +44,9 @@ int _printf(const char *format, ...)
 					printed_count++;
 					break;
 				case '%':
-					if (*(format + 1) == '%')
-					{
-						_putchar('%');
-						printed_count++;
-						format++;
-					}
-					else
-					{
-						_putchar('%');
-						printed_count++;
-						format++;
-					}
+					_putchar('%');
+					printed_count++;
+					format++;
 					break;
 				case 's':
 					str = va_arg(args, char *);
@@ -105,10 +96,6 @@ int _printf(const char *format, ...)
 					n7 = converter.ptr;
 
 					printed_count += print_address(n7);
-					break;
-				case '\0':
-					_putchar('%');
-					printed_count++;
 					break;
 				default:
 					_putchar('%');

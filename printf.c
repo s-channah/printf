@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 	int n, n1, n2, n3, n4, n5, n6;
 	void *n7;
 	char *str;
+
 	union Converter
 	{
 		unsigned int ui;

@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int printed_count = 0;
 	int n, n1, n2, n3, n4, n5, n6;
-	void *n7;
 	char *str;
+<<<<<<< HEAD
 
 	union Converter
 	{
@@ -23,6 +23,9 @@ int _printf(const char *format, ...)
 		void *ptr;
 	};
 	union Converter converter;
+=======
+	void *ptr;
+>>>>>>> d7c2bc2455f65e03ffffd924bd60a863493b8199
 
 	va_start(args, format);
 
@@ -30,7 +33,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (*format && format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1) == '\0')
+			return (-1);
+		else if (*format == '%')
 		{
 			format++;
 			switch (*format)
@@ -87,10 +92,8 @@ int _printf(const char *format, ...)
 					printed_count += print_unsigned_int(n6, 16);
 					break;
 				case 'p':
-					converter.ui = va_arg(args, unsigned int);
-					n7 = converter.ptr;
-
-					printed_count += print_address(n7);
+					ptr = va_arg(args, void *);
+					printed_count += print_address(ptr);
 					break;
 				default:
 					_putchar('%');

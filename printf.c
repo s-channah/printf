@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	int printed_count = 0;
 	int n, n1, n2, n3, n4, n5, n6;
 	char *str;
-<<<<<<< HEAD
+
 
 	union Converter
 	{
@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 		void *ptr;
 	};
 	union Converter converter;
-=======
+
 	void *ptr;
->>>>>>> d7c2bc2455f65e03ffffd924bd60a863493b8199
+
 
 	va_start(args, format);
 
